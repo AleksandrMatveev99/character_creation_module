@@ -8,8 +8,9 @@ def attack(char_name: str, char_class: str) -> str:
     if char_class == 'mage':
         return (f'{char_name} нанёс урон противнику равный '
                 f'{5 + randint(5, 10)}''')
-    return (f'{char_name} нанёс урон противнику равный '
-            f'{5 + randint(-3, -1)}')
+    if char_class == 'healer':
+        return (f'{char_name} нанёс урон противнику равный '
+                f'{5 + randint(-3, -1)}')
 
 
 def defence(char_name: str, char_class: str) -> str:
@@ -17,7 +18,8 @@ def defence(char_name: str, char_class: str) -> str:
         return (f'{char_name} блокировал {10 + randint(5, 10)} урона')
     if char_class == 'mage':
         return (f'{char_name} блокировал {10 + randint(-2, 2)} урона')
-    return (f'{char_name} блокировал {10 + randint(2, 5)} урона')
+    if char_class == 'healer':
+        return (f'{char_name} блокировал {10 + randint(2, 5)} урона')
 
 
 def special(char_name: str, char_class: str) -> str:
@@ -26,7 +28,8 @@ def special(char_name: str, char_class: str) -> str:
                 f'«Выносливость {80 + 25}»')
     if char_class == 'mage':
         return (f'{char_name} применил специальное умение «Атака {5 + 40}»')
-    return (f'{char_name} применил специальное умение «Защита {10 + 30}»')
+    if char_class == 'healer':
+        return (f'{char_name} применил специальное умение «Защита {10 + 30}»')
 
 
 def start_training(char_name: str, char_class: str) -> str:
